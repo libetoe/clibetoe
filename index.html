@@ -1,83 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Personal Portfolio Website Design | Codehal</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libetoe's Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <!-- box icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-<body class="dark">
-    <!--------- Header Begins -------->
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <!-- header design -->
     <header>
-        <div class="portfolio-container">
-            <div class="portfolio-row header-wrap">
-                <div class="brand-name">
-                    <a href="#" class="logo">Liau Libetoe</a>
-                </div>
-                <!----------------- Header Navigation Begins --------------->
-                <div class="portfolio-navbar">
-                    <ul>
-                        <li><a class="navbar-link" href="#about">Home</a></li>
-                        <li><a class="navbar-link" href="#resume">resume</a></li>
-                        <li><a class="navbar-link" href="#services">Services</a></li>
-                        <li><a class="navbar-link" href="#projects">projects</a></li>
-                        <li><a class="navbar-link" href="#contact">contact</a></li>
-                    </ul>
-                </div>
-                <!------ Header Navigation Ends ----------->
-                <div class="navbar-toggle">
-                    <i class="lni lni-grid-alt"></i>
-                </div>
-                <button type="button" class="theme-toggle">
-                    <i class="lni lni-night"></i>
-                    <i class="lni lni-sun"></i>
-                </button>
-            </div>
-        </div>
+      <a href="#" class="logo text-uppercase">Liau Libetoe</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        
+      </nav>
     </header>
-    <!--------- Header Ends -------->
 
-    <!--------- About Section Begins --------->
-    <section id="about">
-        <div class="portfolio-container">
-            <div class="portfolio-row about-content">
-                <!------ Greetings and Introduction Begins ------>
-                <div class="about-intro">
-                    <div class="about-text">
-                        <h1>👋 Hey there, <br />
-                            It’s
-                            <span class="text-wrap">
-                                <span class="main-title">Liau Libetoe</span>
-                                <span class="hover-title">Liau Libetoe</span>
-                            </span>
-                        </h1>
-                        <h3>Computer Systems Engineer</h3>
-                        <p>Hey are you looking for an IT Technician,Networks Administrator or even a Full Stack Developer to build your <strong>Systems and grow your business
-                                ?</strong> Let's shake hands and I'll be at your service!!.</p>
-                    </div>
-                    <div class="download-resume" id="resume">
-                        <a href="https://drive.google.com/file/d/1l7hDVYd8zdng4On3Bn07RbeBGWWc2oiv/view?usp=sharing" target="_blank">
-                            Download CV
-                        </a>
-                    </div>
-                </div>
-                <!------ Greetings and Introduction Ends ------>
-                <div class="about-image">
-                    <img src="image/prof.png" alt="profile">
-                </div>
-            </div>
+
+    <!-- home section design -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello,It's Me</h3>
+        <h1>Liau Libetoe</h1>
+        <h3>And I'm a <span class="multiple-text"></span> </h3>
+        <p>
+          Hey are you looking for an IT Technician,Networks Administrator or even a Full Stack Developer to build your <strong>Systems and grow your business
+                                ?</strong> Let's shake hands and I'll be at your service!!.
+        </p>
+        
+        <div class="social-media">
+          <a href="linkedin.com/in/liau-libetoe-107988185/"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/libetoe"><i class='bx bxl-github' ></i></a>
+          <a href="https://api.whatsapp.com/send?phone=26656656659&text=Please%20contact%20me%20here"><i class='bx bxl-whatsapp-square'></i></a>
+          <a href="conslibetoe@gmail.com"><i class='bx bxs-envelope' ></i></a>
+
+          
+        </div>
+        <a href="https://drive.google.com/file/d/1l7hDVYd8zdng4On3Bn07RbeBGWWc2oiv/view?usp=sharing" class="btn">Download CV</a>
+      </div>
+      <div class="home-img">
+        <img src="img/home.png" alt="">
+      </div>
+    </section>
+
+    <!-- about section design -->
+
+    <section class="about" id="about">
+      <div class="about-img">
+          <img src="img/about.png" alt="">
+      </div>
+      <div class="about-content">
+          <h2 class="heading">About</h2>
+          <h3>Computer Systems Engineer!</h3>
+          <p>
+            I am highly motivated and results-oriented individual holding Diploma in Computer Systems Engineering currently pursuing a Bachelor of Engineering  in Computer Systems and Networks. I'm passionate about building secure and efficient IT infrastructure while also developing my skills in web development to create engaging user experiences.I am further driven by a strong curiosity for Artificial Intelligence (AI) and Machine Learning (ML)  seeking opportunities to learn and master these fields.
+          </p>
+          <a href="#" class="btn">Read More</a>
         </div>
     </section>
-    <!------- About Section Ends ------->
 
-    <!------- Contact Section Begins ------->
-    <section id="contact">
-        <div class="portfolio-container">
-            <div class="portfolio-row">
+    <!-- services section design -->
+    <section class="services" id="services">
+      <h2 class="heading" >Our <span>Services</span></h2>
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bx-code-alt"></i>
+          <h3>Full Stack Development</h3>
+          <p>Used Frameworks like Laravel, Django and Flask to develop web based applications
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="services-box">
+          <i class='bx bx-cloud-download'></i>
+          <h3>IT Support</h3>
+          <p>Software installations and operating systems,Maintenance of printers and other devices(Laptops) and software updating</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="services-box">
+          <i class='bx bx-signal-5'></i>
+          <h3>Computer Networks Management</h3>
+          <p>Network cabling, configurations, and maintenance,Computer Labs monitoring including network re-configurations </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        
+      </div>
+    </section>
 
+    <!-- portfolio section design -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Lastest <span>Projects</span></h2>
+      <div class="portfolio-container">
+
+        <div class="portfolio-box">
+          <img src="img/portfolio1.gif" alt="">
+          <div class="portfolio-layer">
+            <h4>Moscert Systems</h4>
+            <p>
+              This was a Laravel Solar Company Installation Management System.
+            </p>
+            <a href="#"><i  class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="img/portfolio2.gif" alt="">
+          <div class="portfolio-layer">
+            <h4>Exam Management Systems</h4>
+            <p>
+              This was a Java Student Examination Systems.
+            </p>
+            <a href="#"><i  class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="img/portfolio3.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Bird Repellent Systems</h4>
+            <p>
+              A basic ML algorithms & IoT to scare the birds from soghum fields.
+            </p>
+            <a href="#"><i  class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="img/portfolio4.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Bootstrap Viewa</h4>
+            <p>
+              Bootstrap mini-projects for frontend Development 
+            </p>
+            <a href="#"><i  class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="img/portfolio5.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Django Web Sites</h4>
+            <p>
+              Django mini-projects for the Backend Development  
+            </p>
+            <a href="#"><i  class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="img/portfolio6.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Mql5 Systems</h4>
+            <p>
+              Financial systems for trading the markets automatically 
+            </p>
+            <a href="#"><i  class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- contact section design -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-row">
                 <!-------- Contact Information Begins ------->
                 <div class="contact-info">
                     <span class="subtitle">
@@ -122,8 +216,10 @@
                     <span class="subtitle">
                         Leave a Message
                     </span>
+
+                   
                     <form action="#" method="post" id="contact-form">
-                        <div class="portfolio-row">
+                        <div class="contact-row">
                             <div class="input-wrapper">
                                 <label for="name">First Name <span>*</span></label>
                                 <input type="text" name="name" placeholder="Enter your first name" class="input-control">
@@ -138,8 +234,7 @@
                             </div>
                             <div class="input-subject">
                                 <label for="name">Message <span>*</span></label>
-                                <textarea name="message" rows="9" placeholder="Your Message"
-                                    class="contact-msg"></textarea>
+                                <textarea name="message" rows="9" placeholder="Your Message" class="contact-msg"></textarea>
                             </div>
                         </div>
                         <div class="form-submit">
@@ -155,40 +250,28 @@
             </div>
         </div>
     </section>
-    <!------- Contact Section Ends ------->
-    <!------- Footer Begins ------->
-    <footer>
-        <div class="portfolio-container">
-            <div class="portfolio-row footer-wrap">
-                <div class="copyright-text">
-                    <p>© Copyright 2024 by <strong>Libetoe</strong></p>
-                </div>
-                <ul class="social-icons">
-                    <li>
-                        <a href="https://api.whatsapp.com/send?phone=26656656659&text=Please%20contact%20me%20here">
-                        <i class="lni lni-whatsapp"></i>
-                        Whatsapp
-                        </a
-                    ></li>
-                    <li>
-                        <a href="https://github.com/libetoe">
-                        <i class="lni lni-github-original"></i>
-                        Github
-                        </a>
-                    </li>
-                    <li>
-                        <a href="linkedin.com/in/liau-libetoe-107988185/">
-                        <i class="lni lni-linkedin-original"></i>
-                        LinkedIn
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <!------- Footer Ends ------->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
 
+
+    <!------- Footer Begins ------->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2024 by <strong>Liau Libetoe </strong>+26656656659 | All Rights Reserved</p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

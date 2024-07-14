@@ -1,0 +1,254 @@
+
+
+
+
+:root{
+    --bg-color1: #0b0f19;
+    --bg-color2: #1c1e2a;
+    --color1: #FFF;
+    --color2: #DDD;
+}
+/* ======= Wraper ======== */
+
+.contact-container {
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*========== Styling Navigation Bar ========*/
+
+
+
+/* ------ Contact Section Style ------- */
+
+.contact-section {
+    padding: 60px 0;
+    background-color: var(--bg-color2);
+}
+
+.contact-section .contact-row {
+    align-items: center;
+}
+
+.contact-section ul {
+    margin-top: 3rem;
+    font-size: 2.0rem;
+}
+
+.contact-section form {
+    margin-top: 2rem;
+    font-size: 2.0rem;
+}
+
+.contact-info {
+    width: 100%;
+    padding-top: 45px;
+    order: 2;
+    font-size: 1.7rem;
+}
+
+/* ====== Subtitle ========= */
+
+.subtitle {
+    position: relative;
+    color: var(--color1);
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    padding-left: 55px;
+    font-size: 1.7rem;
+}
+
+.subtitle::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 35px;
+    height: 3px;
+    background-color: var(--color1);
+}
+
+.contact-info li {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem !important;
+    cursor: pointer;
+}
+
+.contact-icon {
+    margin: auto 0;
+}
+
+.contact-icon i {
+    color: var(--color1);
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 1.6rem;
+}
+
+.contact-detail h5 {
+    color: var(--color1);
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.contact-detail span {
+    color: var(--color1);
+}
+
+/* ----- Footer contact form -------- */
+
+.footer-contact {
+    width: 100%;
+    padding-top: 15px;
+}
+
+.input-wrapper,
+.input-subject,
+.form-submit {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.7rem;
+}
+
+.input-control,
+.contact-msg {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7rem;
+    background-color: #f6f6f9;
+    border: 1px solid #f6f6f9;
+    color: #3e4455;
+    line-height: 45px;
+    outline: none;
+    padding: 0 30px;
+    width: 100%;
+    font-weight: 500;
+}
+
+.contact-msg {
+    height: 120px;
+    line-height: 1.2;
+    padding: 20px 30px;
+    resize: none;
+}
+
+.footer-contact label {
+    color: var(--color1);
+    margin-bottom: .5rem;
+    display: inline-block;
+}
+
+.footer-contact label span {
+    color: #C0303E;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px 30px;
+    font-weight: 800;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    background-color: #293b5f;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+/* ======= Message following form submission: error or success ======== */
+
+.loader {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--bg-color1);
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+.loader.show {
+    display: block;
+}
+
+.loader i {
+    color: var(--color2);
+    animation: rotateme .4s linear infinite;
+}
+
+.form-message {
+    width: 100%;
+    background-color: var(--bg-color1);
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+.form-message.show {
+    display: block;
+}
+
+.success-msg {
+    color: green;
+    line-height: 3;
+}
+
+.error-msg {
+    color: red;
+    line-height: 3;
+}
+
+/* ---- loader animation ----- */
+
+@keyframes rotateme {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*---------------- Large devices (desktops, 992px and up)  -----------*/
+
+@media (min-width: 768px) {
+
+    /*======= Responsive Universal CSS Properties =======*/
+
+    /* ----- Contact responsive ------ */
+
+    .contact-info {
+        order: 1;
+        width: 35%;
+        padding-top: 15px;
+    }
+
+    .footer-contact {
+        order: 2;
+        width: 65%;
+        padding-left: 40px;
+    }
+
+    .input-wrapper {
+        padding: 0 10px;
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .input-subject,
+    .form-submit {
+        padding: 10px;
+    }
+
+    /* ====== Footer Responsive ========= */
+
+}
