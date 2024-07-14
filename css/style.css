@@ -401,6 +401,10 @@ span{
 
 }
 @media (max-width: 450px){
+    .navbar{
+        padding: 0rem 1%;
+    }
+
     html{
         font-size: 50%;
     }
@@ -410,6 +414,12 @@ span{
 
 }
 @media (max-width: 365px){
+    .navbar,
+    .navbar a{
+        margin-left: 1rem;
+        padding: 0 1%;
+    }
+
     .home-img img{
         width: 90vw;   
     }

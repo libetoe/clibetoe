@@ -11,7 +11,7 @@
 /* ======= Wraper ======== */
 
 .contact-container {
-    
+    max-width: 1070px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -206,17 +206,7 @@
     line-height: 3;
 }
 
-/* ---- loader animation ----- */
 
-@keyframes rotateme {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 /*---------------- Large devices (desktops, 992px and up)  -----------*/
 
