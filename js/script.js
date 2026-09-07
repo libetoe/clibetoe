@@ -13,7 +13,8 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 /* ── EmailJS init (single) ── */
 (function () {
-  emailjs.init('9eiNImI62_6mzNwoH');
+  if (typeof emailjs === 'undefined') return; // guarded like every other optional dependency below —
+  emailjs.init('9eiNImI62_6mzNwoH');            // a slow/blocked CDN shouldn't take the rest of the page's JS down with it
 })();
 
 
@@ -91,46 +92,102 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
-/* ── ScrollReveal animations ── */
+/* ── Motion (motion.dev) — spring entrances, real per-item stagger ──
+   Self-hosted at js/vendor/motion.min.js (MIT), exposes window.Motion.
+   Replaces ScrollReveal: same fail-open guard (undefined library or
+   prefers-reduced-motion means content just stays visible, no JS-driven
+   hiding), but entrances now spring rather than linear-fade, and card
+   grids stagger relative to each other instead of a fixed interval
+   applied uniformly to everything on the page. */
 (function () {
-  if (typeof ScrollReveal === 'undefined' || prefersReducedMotion) return;
+  if (typeof Motion === 'undefined' || prefersReducedMotion) return;
+  const { animate, inView, stagger } = Motion;
+  const spring = { type: 'spring', stiffness: 130, damping: 18, mass: 0.7 };
 
-  const sr = ScrollReveal({
-    distance: '30px',
-    duration: 700,
-    delay: 80,
-    easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
-    reset: false,
-  });
+  /* A container's children animate together, staggered, the first time
+     the container scrolls into view. */
+  function revealGroup(containerSelector, itemSelector, opts = {}) {
+    const { y = 22, staggerDelay = 0.06, amount = 0.18 } = opts;
+    $$(containerSelector).forEach(container => {
+      const items = $$(itemSelector, container);
+      if (!items.length) return;
+      animate(items, { opacity: 0, y }, { duration: 0 });
+      inView(container, () => {
+        animate(items, { opacity: 1, y: 0 }, { ...spring, delay: stagger(staggerDelay) });
+      }, { amount });
+    });
+  }
 
-  sr.reveal('.reveal-left',   { origin: 'left' });
-  sr.reveal('.reveal-right',  { origin: 'right' });
-  sr.reveal('.reveal-bottom', { origin: 'bottom', interval: 100 });
-  sr.reveal('.section-label, .section-title, .section-subtitle', {
-    origin: 'top',
-    interval: 80,
-  });
-  sr.reveal('.about-card',       { origin: 'bottom', interval: 120 });
-  sr.reveal('.skill-group',      { origin: 'bottom', interval: 100 });
-  sr.reveal('.cert-card',        { origin: 'bottom', interval: 50  });
-  sr.reveal('.project-card',     { origin: 'bottom', interval: 100 });
-  sr.reveal('.ach-card',         { origin: 'bottom', interval: 120 });
-  sr.reveal('.edu-card',         { origin: 'bottom', interval: 100 });
-  sr.reveal('.contact-info',     { origin: 'left'   });
-  sr.reveal('.contact-form-wrap',{ origin: 'right'  });
+  /* A single element slides in from a side/direction when it scrolls into view. */
+  function revealSingle(selector, opts = {}) {
+    const { x = 0, y = 0, amount = 0.2 } = opts;
+    $$(selector).forEach(el => {
+      animate(el, { opacity: 0, x, y }, { duration: 0 });
+      inView(el, () => animate(el, { opacity: 1, x: 0, y: 0 }, spring), { amount });
+    });
+  }
+
+  revealSingle('.about-text',        { x: -24 });
+  revealSingle('.contact-info',      { x: -24 });
+  revealSingle('.contact-form-wrap', { x: 24 });
+  revealSingle('.achievement-featured', { y: 24, amount: 0.15 });
+
+  revealGroup('.section',            '.section-label, .section-title, .section-subtitle', { y: 14, staggerDelay: 0.06, amount: 0.3 });
+  revealGroup('.about-cards',        '.about-card',   { staggerDelay: 0.08 });
+  revealGroup('.skills-primary',     '.skill-group',  { staggerDelay: 0.1  });
+  revealGroup('.skills-secondary',   '.skill-group',  { staggerDelay: 0.06 });
+  revealGroup('.cert-featured-grid', '.cert-card',    { staggerDelay: 0.04 });
+  revealGroup('.projects-grid',      '.project-card', { staggerDelay: 0.07 });
+  revealGroup('.achievements-grid',  '.ach-card',     { staggerDelay: 0.08 });
+  revealGroup('.edu-grid',           '.edu-card',     { staggerDelay: 0.08 });
+  revealGroup('.timeline',           '.timeline-item',{ staggerDelay: 0.1  });
+
+  /* The hero is the one orchestrated, signature motion moment — a
+     deliberate sequence instead of the same fade applied to everything
+     down the page. Runs once, on load, since the hero is always the
+     first thing in view. */
+  const heroBeats = [
+    ['.hero-badge',  14],
+    ['.hero-name',   18],
+    ['.hero-role',   14],
+    ['.hero-bio',    14],
+    ['.hero-stats',  14],
+    ['.hero-ctas',   14],
+    ['.hero-social', 10],
+  ];
+  const heroEls = heroBeats.map(([sel, y]) => [$(sel), y]).filter(([el]) => el);
+  heroEls.forEach(([el, y]) => animate(el, { opacity: 0, y }, { duration: 0 }));
+  const heroImg = $('.hero-image');
+  if (heroImg) animate(heroImg, { opacity: 0, scale: 0.94 }, { duration: 0 });
+
+  heroEls.forEach(([el], i) => animate(el, { opacity: 1, y: 0 }, { ...spring, delay: 0.08 * i }));
+  if (heroImg) animate(heroImg, { opacity: 1, scale: 1 }, { ...spring, delay: 0.08 * heroEls.length });
+
+  /* Content-aware hover: a card's border/glow tints toward the accent
+     only when it belongs to the identity-defining categories (SOC/SIEM,
+     cybersecurity, security-tagged projects) — motion carrying the same
+     signal the color system already encodes, not decoration on top of it. */
+  const ACCENT_CATEGORIES = new Set(['cybersec', 'soc', 'security']);
+  function wireHoverAccent(selector, dataKey) {
+    $$(selector).forEach(card => {
+      const isCore = ACCENT_CATEGORIES.has(card.dataset[dataKey]);
+      card.style.setProperty('--hover-accent', isCore ? 'var(--accent-500)' : 'var(--text-faint)');
+    });
+  }
+  wireHoverAccent('.cert-card', 'category');
+  wireHoverAccent('.project-card', 'pcat');
 })();
 
 
-/* ── Certification filter ── */
+/* ── Certification filter (applies to both the featured cards and the archive rows) ── */
 (function () {
-  const filters   = $$('.cert-filter');
-  const certCards = $$('.cert-card');
+  const filters = $$('.cert-filter');
+  const items   = $$('.cert-card, .cert-archive-row');
 
   filters.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
 
-      /* Update active state */
       filters.forEach(f => {
         f.classList.remove('active');
         f.setAttribute('aria-selected', 'false');
@@ -138,12 +195,29 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
       btn.setAttribute('aria-selected', 'true');
 
-      /* Show / hide cards */
-      certCards.forEach(card => {
-        const match = filter === 'all' || card.dataset.category === filter;
-        card.classList.toggle('hidden', !match);
+      items.forEach(item => {
+        const match = filter === 'all' || item.dataset.category === filter;
+        item.classList.toggle('hidden', !match);
       });
     });
+  });
+})();
+
+
+/* ── Certification archive toggle ── */
+(function () {
+  const toggle  = $('#cert-archive-toggle');
+  const archive = $('#cert-archive');
+  if (!toggle || !archive) return;
+
+  const total = $$('.cert-archive-row').length + $$('.cert-featured-grid .cert-card').length;
+  const label = $('.toggle-label', toggle);
+
+  toggle.addEventListener('click', () => {
+    const isOpen = archive.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    label.textContent = isOpen ? 'Show fewer certifications' : `Show all ${total} certifications`;
+    if (isOpen) archive.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest' });
   });
 })();
 
@@ -279,6 +353,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!name || !email || !message) {
       setFeedback('Please fill in all required fields.', 'error');
+      return;
+    }
+
+    if (typeof emailjs === 'undefined') {
+      setFeedback('Message service unavailable right now. Please email me directly at conslibetoe@gmail.com', 'error');
       return;
     }
 

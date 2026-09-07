@@ -14,17 +14,22 @@
   --bg-card-h:   #111e35;
   --bg-glass:    rgba(13, 22, 39, 0.75);
 
-  /* Accent palette */
-  --cyan:        #e63946;
-  --cyan-dim:    rgba(230, 57, 70, 0.12);
-  --cyan-glow:   0 0 20px rgba(230, 57, 70, 0.25);
-  --purple:      #7c3aed;
-  --purple-dim:  rgba(124, 58, 237, 0.15);
-  --green:       #10b981;
-  --green-dim:   rgba(16, 185, 129, 0.15);
-  --gold:        #f59e0b;
-  --gold-dim:    rgba(245, 158, 11, 0.15);
-  --red:         #ef4444;
+  /* Accent — one identity color, expressed as a scale.
+     Crimson is the brand: alert, decisive, unmistakably "security". */
+  --accent-600:  #c62835;   /* hover / pressed */
+  --accent-500:  #e63946;   /* fills, solid buttons, borders, icons */
+  --accent-400:  #ff5f6b;   /* small text-on-dark — ~7:1 contrast on --bg-base */
+  --accent-dim:  rgba(230, 57, 70, 0.12);
+  --accent-glow: 0 0 20px rgba(230, 57, 70, 0.25);
+
+  /* Semantic — meaning, not decoration. Never used as a stand-in accent. */
+  --status-live:      #10b981;   /* "available" dot, active-cert indicator */
+  --status-live-dim:  rgba(16, 185, 129, 0.15);
+  --status-muted:     #64748b;   /* completed / inactive indicator */
+  --tier-gold:        #f59e0b;   /* 1st place / top competition result only */
+  --tier-gold-dim:    rgba(245, 158, 11, 0.14);
+  --tier-silver:      #94a3b8;   /* 2nd place only */
+  --red:              #ef4444;   /* form-error semantic only */
 
   /* Borders */
   --border:      rgba(230, 57, 70, 0.1);
@@ -51,9 +56,10 @@
   --r-xl:   24px;
 
   /* Transitions */
-  --t-fast: 150ms ease;
-  --t-mid:  250ms ease;
-  --t-slow: 400ms ease;
+  --t-fast:   150ms ease;
+  --t-mid:    250ms ease;
+  --t-slow:   400ms ease;
+  --t-spring: 320ms cubic-bezier(0.34, 1.56, 0.64, 1); /* slight overshoot — hover lifts read as physical, not linear */
 
   /* Z-index scale */
   --z-base:  10;
@@ -118,7 +124,7 @@ button {
 }
 
 .mono { font-family: var(--mono); }
-.accent { color: var(--cyan); }
+.accent { color: var(--accent-400); }
 
 
 /* ============================================================
@@ -166,7 +172,7 @@ button {
   transition: color var(--t-fast);
 }
 
-.nav-logo:hover { color: var(--cyan); }
+.nav-logo:hover { color: var(--accent-400); }
 
 .nav-links {
   display: flex;
@@ -188,8 +194,8 @@ button {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--cyan);
-  background: var(--cyan-dim);
+  color: var(--accent-400);
+  background: var(--accent-dim);
 }
 
 .nav-resume-btn {
@@ -200,7 +206,7 @@ button {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--bg-base);
-  background: var(--cyan);
+  background: var(--accent-500);
   border-radius: var(--r-sm);
   white-space: nowrap;
   transition: opacity var(--t-fast), box-shadow var(--t-fast);
@@ -209,7 +215,7 @@ button {
 
 .nav-resume-btn:hover {
   opacity: 0.88;
-  box-shadow: var(--cyan-glow);
+  box-shadow: var(--accent-glow);
 }
 
 .hamburger {
@@ -257,13 +263,13 @@ button {
   transition: color var(--t-fast);
 }
 
-.mobile-nav a:hover { color: var(--cyan); }
+.mobile-nav a:hover { color: var(--accent-400); }
 
 .mobile-resume-btn {
   margin-top: 1rem;
   padding: 0.75rem;
   text-align: center;
-  background: var(--cyan);
+  background: var(--accent-500);
   color: var(--bg-base) !important;
   font-weight: 700;
   border-radius: var(--r-sm);
@@ -290,7 +296,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: var(--accent-400);
   margin-bottom: 0.75rem;
 }
 
@@ -328,25 +334,25 @@ button {
 }
 
 .btn-primary {
-  background: var(--cyan);
+  background: var(--accent-500);
   color: var(--bg-base);
 }
 
 .btn-primary:hover {
   opacity: 0.88;
-  box-shadow: var(--cyan-glow);
+  box-shadow: var(--accent-glow);
   transform: translateY(-1px);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--cyan);
-  border: 1.5px solid var(--cyan);
+  color: var(--accent-400);
+  border: 1.5px solid var(--accent-500);
 }
 
 .btn-outline:hover {
-  background: var(--cyan-dim);
-  box-shadow: var(--cyan-glow);
+  background: var(--accent-dim);
+  box-shadow: var(--accent-glow);
   transform: translateY(-1px);
 }
 
@@ -389,19 +395,19 @@ button {
   align-items: center;
   gap: 0.6rem;
   padding: 0.45rem 1rem;
-  background: var(--cyan-dim);
+  background: var(--accent-dim);
   border: 1px solid var(--border);
   border-radius: 100px;
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--cyan);
+  color: var(--accent-400);
   margin-bottom: 1.5rem;
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
-  background: var(--green);
+  background: var(--status-live);
   border-radius: 50%;
   animation: pulse-dot 2s ease-in-out infinite;
   flex-shrink: 0;
@@ -434,7 +440,7 @@ button {
 }
 
 .role-prefix {
-  color: var(--cyan);
+  color: var(--accent-400);
   font-family: var(--mono);
   font-size: 1.05rem;
   font-weight: 700;
@@ -448,7 +454,7 @@ button {
 }
 
 /* Typed.js cursor inherits color from parent */
-.typed-cursor { color: var(--cyan); font-weight: 400; }
+.typed-cursor { color: var(--accent-400); font-weight: 400; }
 
 .hero-bio {
   font-size: 1.05rem;
@@ -524,9 +530,9 @@ button {
 }
 
 .hero-social a:hover {
-  color: var(--cyan);
+  color: var(--accent-400);
   border-color: var(--border);
-  background: var(--cyan-dim);
+  background: var(--accent-dim);
   transform: translateY(-2px);
 }
 
@@ -536,8 +542,9 @@ button {
   position: relative;
   z-index: var(--z-base);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 1.5rem;
 }
 
 .hero-img-frame {
@@ -552,32 +559,20 @@ button {
   object-fit: cover;
   object-position: center 15%;
   border-radius: 50%;
-  border: 3px solid var(--cyan);
-  box-shadow: 0 0 0 6px rgba(230, 57, 70, 0.15), var(--cyan-glow);
+  border: 3px solid var(--accent-500);
+  box-shadow: 0 0 0 6px rgba(230, 57, 70, 0.15), var(--accent-glow);
   position: relative;
   z-index: 2;
   display: block;
 }
 
+/* Single ring, single accent — the ring earns its keep as a signal, not decoration */
 .img-ring {
   position: absolute;
-  inset: 0;
+  inset: -14px;
   border-radius: 50%;
-  border: 1.5px solid var(--border);
-  animation: spin-ring 12s linear infinite;
-}
-
-.img-ring-1 {
-  inset: -12px;
-  border-color: rgba(230, 57, 70, 0.18);
-  border-style: dashed;
-}
-
-.img-ring-2 {
-  inset: -28px;
-  border-color: rgba(124, 58, 237, 0.12);
-  animation-direction: reverse;
-  animation-duration: 20s;
+  border: 1.5px dashed rgba(230, 57, 70, 0.22);
+  animation: spin-ring 16s linear infinite;
 }
 
 @keyframes spin-ring {
@@ -585,9 +580,16 @@ button {
   to   { transform: rotate(360deg); }
 }
 
-/* Floating badges */
-.hero-float-badge {
-  position: absolute;
+/* Trust bar — sits in normal flow under the photo, so labels always
+   have room to render in full (fixes the old floating-badge clipping bug). */
+.hero-trust-bar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trust-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -597,36 +599,12 @@ button {
   border-radius: 100px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--text);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  color: var(--accent-400);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   white-space: nowrap;
-  animation: float-badge 4s ease-in-out infinite;
 }
 
-.fortinet-badge {
-  top: 10%;
-  right: -20px;
-  animation-delay: 0s;
-  color: var(--green);
-  border-color: rgba(16, 185, 129, 0.3);
-}
-
-.fortinet-badge i { font-size: 1rem; }
-
-.ctf-badge {
-  bottom: 15%;
-  left: -20px;
-  animation-delay: 2s;
-  color: var(--gold);
-  border-color: rgba(245, 158, 11, 0.3);
-}
-
-.ctf-badge i { font-size: 1rem; }
-
-@keyframes float-badge {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-6px); }
-}
+.trust-item i { font-size: 1rem; }
 
 
 /* ============================================================
@@ -652,8 +630,8 @@ button {
 .about-quote {
   margin-top: 1.5rem;
   padding: 1.25rem 1.5rem;
-  border-left: 3px solid var(--cyan);
-  background: var(--cyan-dim);
+  border-left: 3px solid var(--accent-500);
+  background: var(--accent-dim);
   border-radius: 0 var(--r-md) var(--r-md) 0;
   font-style: italic;
   color: var(--text);
@@ -672,7 +650,7 @@ button {
   border: 1px solid var(--border-card);
   border-radius: var(--r-lg);
   padding: 1.5rem;
-  transition: border-color var(--t-mid), transform var(--t-mid);
+  transition: border-color var(--t-mid), transform var(--t-spring);
 }
 
 .about-card:hover {
@@ -716,7 +694,7 @@ button {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--cyan), var(--purple), transparent);
+  background: linear-gradient(to bottom, var(--accent-500), var(--accent-dim), transparent);
   border-radius: 2px;
 }
 
@@ -741,9 +719,9 @@ button {
 }
 
 .timeline-marker.current .marker-dot {
-  border-color: var(--cyan);
-  background: var(--cyan);
-  box-shadow: 0 0 0 4px var(--cyan-dim);
+  border-color: var(--accent-500);
+  background: var(--accent-500);
+  box-shadow: 0 0 0 4px var(--accent-dim);
 }
 
 .timeline-card {
@@ -751,7 +729,7 @@ button {
   border: 1px solid var(--border-card);
   border-radius: var(--r-lg);
   padding: 1.75rem 2rem;
-  transition: border-color var(--t-mid), transform var(--t-mid);
+  transition: border-color var(--t-mid), transform var(--t-spring);
 }
 
 .timeline-card:hover {
@@ -779,9 +757,9 @@ button {
   margin-bottom: 0.5rem;
 }
 
-.current-badge { background: var(--green-dim); color: var(--green); }
-.dev-badge     { background: var(--purple-dim); color: var(--purple); }
-.it-badge      { background: var(--cyan-dim);   color: var(--cyan); }
+.current-badge { background: var(--status-live-dim); color: var(--status-live); }
+.dev-badge,
+.it-badge      { background: rgba(148, 163, 184, 0.1); color: var(--text-muted); border: 1px solid rgba(148, 163, 184, 0.2); }
 
 .tl-role {
   font-size: 1.2rem;
@@ -793,7 +771,7 @@ button {
 .tl-company {
   display: block;
   font-size: 0.9rem;
-  color: var(--cyan);
+  color: var(--accent-400);
   font-weight: 500;
   margin-top: 0.25rem;
 }
@@ -847,8 +825,8 @@ button {
   font-size: 0.72rem;
   font-weight: 600;
   font-family: var(--mono);
-  color: var(--cyan);
-  background: var(--cyan-dim);
+  color: var(--accent-400);
+  background: var(--accent-dim);
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   white-space: nowrap;
@@ -907,19 +885,47 @@ button {
 /* ============================================================
    SKILLS SECTION
    ============================================================ */
-.skills-grid {
+/* Two-tier weighting: the categories that define the identity get more
+   room and an accent-tinted surface; supporting skills stay quieter. */
+.skills-primary {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
   margin-top: 2.5rem;
 }
+
+.skills-secondary-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 2rem 0 1rem;
+}
+
+.skills-secondary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.skills-secondary .skill-group { padding: 1.15rem 1.25rem; }
+.skills-secondary .skill-group-header { margin-bottom: 0.9rem; }
+.skills-secondary .skill-group-header i { font-size: 1.15rem; }
+.skills-secondary .skill-group-header h3 { font-size: 0.87rem; }
 
 .skill-group {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: var(--r-lg);
   padding: 1.5rem;
-  transition: border-color var(--t-mid), transform var(--t-mid);
+  transition: border-color var(--t-mid), transform var(--t-spring);
+}
+
+.skill-group--primary {
+  border-color: var(--border-h);
+  background: linear-gradient(165deg, var(--accent-dim), var(--bg-card) 55%);
 }
 
 .skill-group:hover {
@@ -936,7 +942,7 @@ button {
 
 .skill-group-header i {
   font-size: 1.4rem;
-  color: var(--cyan);
+  color: var(--accent-400);
 }
 
 .skill-group-header h3 {
@@ -962,14 +968,22 @@ button {
   cursor: default;
 }
 
-.cat-sec   { background: rgba(230,57,70,0.08); color: #e63946; border-color: rgba(230,57,70,0.2); }
-.cat-off   { background: rgba(239,68,68,0.08);   color: #f87171; border-color: rgba(239,68,68,0.2); }
-.cat-net   { background: rgba(16,185,129,0.08);  color: #34d399; border-color: rgba(16,185,129,0.2); }
-.cat-dev   { background: rgba(124,58,237,0.08);  color: #a78bfa; border-color: rgba(124,58,237,0.2); }
-.cat-cloud { background: rgba(245,158,11,0.08);  color: #fbbf24; border-color: rgba(245,158,11,0.2); }
-.cat-tools { background: rgba(148,163,184,0.08); color: #94a3b8; border-color: rgba(148,163,184,0.2); }
+/* Security Operations + Offensive Security carry the accent — they're the
+   identity-defining categories. Everything else stays neutral and only
+   picks up the accent on hover, so color scarcity signals priority. */
+.cat-sec,
+.cat-off   { background: var(--accent-dim); color: var(--accent-400); border-color: var(--border-h); }
+.cat-net,
+.cat-dev,
+.cat-cloud,
+.cat-tools { background: rgba(148,163,184,0.07); color: var(--text-muted); border-color: rgba(148,163,184,0.16); }
 
-.skill-tag:hover { filter: brightness(1.15); transform: translateY(-1px); }
+.skill-tag:hover {
+  color: var(--accent-400);
+  border-color: var(--border-h);
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+}
 
 
 /* ============================================================
@@ -996,10 +1010,35 @@ button {
 
 .cert-filter:hover,
 .cert-filter.active {
-  color: var(--cyan);
+  color: var(--accent-400);
   border-color: var(--border-h);
-  background: var(--cyan-dim);
+  background: var(--accent-dim);
 }
+
+/* Featured tier: the credentials that actually move a hiring decision.
+   Slightly larger than the archive rows below, same card component. */
+.cert-tier-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0 0 1rem;
+}
+
+.cert-tier-label:not(:first-child) { margin-top: 2.25rem; }
+
+.cert-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.cert-featured-grid .cert-card { border-color: var(--border-card); }
 
 .cert-grid {
   display: grid;
@@ -1007,7 +1046,82 @@ button {
   gap: 1rem;
 }
 
+/* Archive: everything else, collapsed by default — dense rows instead
+   of full cards, so 24 completion certificates don't out-shout the 8
+   that actually matter. */
+.cert-archive-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-top: 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px dashed var(--border-card);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+}
+
+.cert-archive-toggle:hover,
+.cert-archive-toggle:focus-visible {
+  color: var(--accent-400);
+  border-color: var(--border-h);
+  background: var(--accent-dim);
+}
+
+.cert-archive-toggle i {
+  margin-left: auto;
+  font-size: 1.1rem;
+  transition: transform var(--t-mid);
+}
+
+.cert-archive-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
+
+.cert-archive {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--t-slow);
+}
+
+.cert-archive.open { grid-template-rows: 1fr; }
+
+.cert-archive-inner { overflow: hidden; }
+
+.cert-archive-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.cert-archive-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-card);
+  transition: background var(--t-fast);
+}
+
+.cert-archive-row:first-child { border-top: none; }
+.cert-archive-row:hover { background: var(--bg-card); }
+.cert-archive-row.hidden { display: none; }
+
+.cert-archive-name { color: var(--text); font-weight: 500; }
+.cert-archive-org { color: var(--text-muted); font-size: 0.8rem; }
+.cert-archive-date { font-family: var(--mono); font-size: 0.78rem; color: var(--text-faint); white-space: nowrap; }
+
 .cert-card {
+  --hover-accent: var(--border-h);
   background: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: var(--r-lg);
@@ -1015,11 +1129,12 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  transition: border-color var(--t-mid), transform var(--t-mid);
+  transition: border-color var(--t-mid), transform var(--t-spring), box-shadow var(--t-spring);
 }
 
 .cert-card:hover {
-  border-color: var(--border);
+  border-color: var(--hover-accent);
+  box-shadow: 0 14px 32px -20px var(--hover-accent);
   transform: translateY(-3px);
 }
 
@@ -1059,7 +1174,7 @@ button {
 }
 
 .cert-status-dot.active-cert {
-  background: var(--green);
+  background: var(--status-live);
   box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
 }
 
@@ -1097,13 +1212,13 @@ button {
   gap: 0.75rem;
 }
 
-.cert-footer-note i { font-size: 1.1rem; color: var(--cyan); }
+.cert-footer-note i { font-size: 1.1rem; color: var(--accent-400); }
 .cert-footer-note code {
   font-family: var(--mono);
-  background: var(--cyan-dim);
+  background: var(--accent-dim);
   padding: 0.1rem 0.4rem;
   border-radius: 4px;
-  color: var(--cyan);
+  color: var(--accent-400);
 }
 
 
@@ -1131,9 +1246,9 @@ button {
 
 .proj-filter:hover,
 .proj-filter.active {
-  color: var(--cyan);
+  color: var(--accent-400);
   border-color: var(--border-h);
-  background: var(--cyan-dim);
+  background: var(--accent-dim);
 }
 
 .projects-grid {
@@ -1143,17 +1258,18 @@ button {
 }
 
 .project-card {
+  --hover-accent: var(--border-h);
   background: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: var(--r-lg);
   overflow: hidden;
-  transition: border-color var(--t-mid), transform var(--t-mid), box-shadow var(--t-mid);
+  transition: border-color var(--t-mid), transform var(--t-spring), box-shadow var(--t-spring);
 }
 
 .project-card:hover {
-  border-color: var(--border-h);
+  border-color: var(--hover-accent);
   transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 40px -18px var(--hover-accent), 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .project-card.hidden { display: none; }
@@ -1202,15 +1318,15 @@ button {
   background: var(--bg-base);
   border: 1px solid var(--border-h);
   border-radius: 50%;
-  color: var(--cyan);
+  color: var(--accent-400);
   font-size: 1.2rem;
   transition: background var(--t-fast), box-shadow var(--t-fast);
   cursor: pointer;
 }
 
 .overlay-links a:hover {
-  background: var(--cyan-dim);
-  box-shadow: var(--cyan-glow);
+  background: var(--accent-dim);
+  box-shadow: var(--accent-glow);
 }
 
 .project-body {
@@ -1256,12 +1372,12 @@ button {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 1rem;
-  background: var(--gold-dim);
+  background: var(--tier-gold-dim);
   border: 1px solid rgba(245, 158, 11, 0.3);
   border-radius: 100px;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--tier-gold);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 1.5rem;
@@ -1283,7 +1399,7 @@ button {
 
 .ach-org {
   font-size: 0.85rem;
-  color: var(--gold);
+  color: var(--tier-gold);
   margin-bottom: 1rem;
   font-weight: 500;
 }
@@ -1319,13 +1435,13 @@ button {
   background: rgba(245,158,11,0.1);
   border-color: rgba(245,158,11,0.3);
 }
-.medal.gold i { color: var(--gold); }
+.medal.gold i { color: var(--tier-gold); }
 
 .medal.silver {
   background: rgba(148,163,184,0.1);
   border-color: rgba(148,163,184,0.3);
 }
-.medal.silver i { color: #94a3b8; }
+.medal.silver i { color: var(--tier-silver); }
 
 /* Featured images */
 .ach-featured-img { flex-shrink: 0; }
@@ -1358,7 +1474,7 @@ button {
   padding: 1.5rem;
   display: flex;
   gap: 1.25rem;
-  transition: border-color var(--t-mid), transform var(--t-mid);
+  transition: border-color var(--t-mid), transform var(--t-spring);
 }
 
 .ach-card:hover {
@@ -1372,9 +1488,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--cyan-dim);
+  background: var(--accent-dim);
   border-radius: var(--r-sm);
-  color: var(--cyan);
+  color: var(--accent-400);
   font-size: 1.3rem;
   flex-shrink: 0;
 }
@@ -1388,8 +1504,8 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--cyan);
-  background: var(--cyan-dim);
+  color: var(--accent-400);
+  background: var(--accent-dim);
   border-radius: 100px;
   margin-bottom: 0.5rem;
 }
@@ -1489,9 +1605,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--cyan-dim);
+  background: var(--accent-dim);
   border-radius: var(--r-sm);
-  color: var(--cyan);
+  color: var(--accent-400);
   font-size: 1.15rem;
   flex-shrink: 0;
 }
@@ -1533,9 +1649,9 @@ button {
 }
 
 .contact-social a:hover {
-  color: var(--cyan);
+  color: var(--accent-400);
   border-color: var(--border-h);
-  background: var(--cyan-dim);
+  background: var(--accent-dim);
   transform: translateY(-2px);
 }
 
@@ -1591,7 +1707,7 @@ button {
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--border-h);
-  box-shadow: 0 0 0 3px var(--cyan-dim);
+  box-shadow: 0 0 0 3px var(--accent-dim);
 }
 
 .btn-submit {
@@ -1610,7 +1726,7 @@ button {
 }
 
 .form-feedback.show { display: block; }
-.form-feedback.success { background: var(--green-dim); color: var(--green); border: 1px solid rgba(16,185,129,0.3); }
+.form-feedback.success { background: var(--status-live-dim); color: var(--status-live); border: 1px solid rgba(16,185,129,0.3); }
 .form-feedback.error   { background: rgba(239,68,68,0.1); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
 
 
@@ -1680,8 +1796,8 @@ button {
 }
 
 .cert-modal-close:hover {
-  background: var(--cyan-dim);
-  color: var(--cyan);
+  background: var(--accent-dim);
+  color: var(--accent-400);
   border-color: var(--border-h);
 }
 
@@ -1730,7 +1846,7 @@ button {
 
 .cert-modal-no-file i {
   font-size: 2.5rem;
-  color: var(--cyan);
+  color: var(--accent-400);
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -1747,7 +1863,7 @@ button {
 }
 
 .cert-card:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--accent-500);
   outline-offset: 2px;
 }
 
@@ -1761,7 +1877,7 @@ button {
   font-weight: 600;
   font-family: var(--mono);
   letter-spacing: 0.03em;
-  color: var(--cyan);
+  color: var(--accent-400);
   background: rgba(230, 57, 70, 0.1);
   border: 1px solid rgba(230, 57, 70, 0.35);
   border-radius: var(--r-sm);
@@ -1774,7 +1890,7 @@ button {
 .cert-preview-btn:hover,
 .cert-preview-btn:focus-visible {
   background: rgba(230, 57, 70, 0.2);
-  border-color: var(--cyan);
+  border-color: var(--accent-500);
   outline: none;
 }
 
@@ -1826,7 +1942,7 @@ button {
   transition: color var(--t-fast);
 }
 
-.footer-logo:hover { color: var(--cyan); }
+.footer-logo:hover { color: var(--accent-400); }
 
 .footer-tagline {
   font-size: 0.85rem;
@@ -1853,9 +1969,9 @@ button {
 }
 
 .footer-social a:hover {
-  color: var(--cyan);
+  color: var(--accent-400);
   border-color: var(--border);
-  background: var(--cyan-dim);
+  background: var(--accent-dim);
 }
 
 .footer-divider {
@@ -1881,7 +1997,7 @@ button {
   justify-content: center;
   width: 38px;
   height: 38px;
-  background: var(--cyan);
+  background: var(--accent-500);
   border-radius: var(--r-sm);
   color: var(--bg-base);
   font-size: 1.2rem;
@@ -1890,7 +2006,7 @@ button {
 
 .back-to-top:hover {
   opacity: 0.85;
-  box-shadow: var(--cyan-glow);
+  box-shadow: var(--accent-glow);
 }
 
 
@@ -1911,6 +2027,7 @@ button {
   .ach-img-stack { flex-direction: row; }
   .ach-img-stack img { width: 160px; height: 110px; max-width: 45%; }
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .skills-primary { grid-template-columns: 1fr; }
 }
 
 /* ============================================================
@@ -1932,8 +2049,6 @@ button {
 
   .hero-image { order: -1; }
   .hero-img-frame { width: 240px; height: 240px; }
-  .fortinet-badge,
-  .ctf-badge { display: none; }
   .hero-bio { text-align: left; }
 }
 
@@ -1975,16 +2090,14 @@ button {
   .hero-name { font-size: clamp(2.4rem, 10vw, 3rem); }
 
   .cert-grid { grid-template-columns: 1fr; }
+  .cert-featured-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
+  .skills-secondary { grid-template-columns: 1fr; }
   .achievements-grid { grid-template-columns: 1fr; }
 
   /* Achievement images: stack vertically on small screens */
   .ach-img-stack { flex-direction: column; }
   .ach-img-stack img { width: 100%; height: 140px; max-width: 100%; }
-
-  /* Hide outer spinning ring to prevent layout jank */
-  .img-ring-2 { display: none; }
 
   .cert-modal-preview iframe { height: 260px; }
   .cert-modal-overlay { padding: 0.75rem; }

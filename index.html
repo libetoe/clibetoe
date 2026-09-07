@@ -15,6 +15,14 @@
   <meta property="og:description" content="Worked at the Central Bank of Lesotho as a SOC Analyst intern. CTF champion with 30+ industry certifications." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://libetoe.github.io/clibetoe" />
+  <meta property="og:image" content="https://libetoe.github.io/clibetoe/img/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://libetoe.github.io/clibetoe/img/og-cover.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
 
   <!-- Fonts: Inter + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,12 +45,12 @@
     <div class="nav-inner">
       <a href="#hero" class="nav-logo" aria-label="Home">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex-shrink:0">
-          <rect width="24" height="24" rx="6" fill="var(--cyan)" fill-opacity="0.12"/>
-          <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" stroke="var(--cyan)" stroke-opacity="0.5"/>
-          <path d="M5 9l3.5 3L5 15" stroke="var(--cyan)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 15h7" stroke="var(--cyan)" stroke-width="1.6" stroke-linecap="round"/>
+          <rect width="24" height="24" rx="6" fill="var(--accent-500)" fill-opacity="0.12"/>
+          <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" stroke="var(--accent-500)" stroke-opacity="0.5"/>
+          <path d="M5 9l3.5 3L5 15" stroke="var(--accent-500)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 15h7" stroke="var(--accent-500)" stroke-width="1.6" stroke-linecap="round"/>
         </svg>
-        <span style="color:var(--cyan)">Li</span>beto<span style="color:var(--cyan)">e</span>
+        <span style="color:var(--accent-500)">Li</span>beto<span style="color:var(--accent-500)">e</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
@@ -90,7 +98,7 @@
     <section id="hero" class="hero">
       <div class="hero-bg-grid" aria-hidden="true"></div>
 
-      <div class="hero-content reveal-left">
+      <div class="hero-content">
         <div class="hero-badge">
           <span class="status-dot" aria-hidden="true"></span>
           <span>Available for Opportunities · Maseru, Lesotho</span>
@@ -158,22 +166,17 @@
         </div>
       </div>
 
-      <div class="hero-image reveal-right">
+      <div class="hero-image">
         <div class="hero-img-frame">
           <img src="pictures/profile/profile2.png"
                alt="Liau Libetoe — SOC Analyst and Cybersecurity Engineer"
                loading="eager" />
-          <div class="img-ring img-ring-1" aria-hidden="true"></div>
-          <div class="img-ring img-ring-2" aria-hidden="true"></div>
+          <div class="img-ring" aria-hidden="true"></div>
         </div>
-        <!-- Floating badge -->
-        <div class="hero-float-badge fortinet-badge" aria-hidden="true">
-          <i class="bx bx-shield-quarter"></i>
-          <span>Fortinet Certified</span>
-        </div>
-        <div class="hero-float-badge ctf-badge" aria-hidden="true">
-          <i class="bx bx-trophy"></i>
-          <span>CTF Champion</span>
+        <!-- Trust bar: sits in normal flow, so labels always have room to render in full -->
+        <div class="hero-trust-bar">
+          <span class="trust-item"><i class="bx bx-shield-quarter"></i> Fortinet Certified</span>
+          <span class="trust-item"><i class="bx bx-trophy"></i> CTF Champion</span>
         </div>
       </div>
     </section>
@@ -188,7 +191,7 @@
         <h2 class="section-title">Who I <span class="accent">Am</span></h2>
 
         <div class="about-grid">
-          <div class="about-text reveal-left">
+          <div class="about-text">
             <p>
               I'm a cybersecurity professional and full-stack developer based in <strong>Maseru, Lesotho</strong>.
               I completed a SOC Analyst internship at the <strong>Central Bank of Lesotho</strong>, where my
@@ -212,7 +215,7 @@
             </blockquote>
           </div>
 
-          <div class="about-cards reveal-right">
+          <div class="about-cards">
             <div class="about-card">
               <i class="bx bx-shield-quarter card-icon accent"></i>
               <h3>30+ Certifications</h3>
@@ -250,7 +253,7 @@
         <div class="timeline">
 
           <!-- Role 1 -->
-          <div class="timeline-item reveal-bottom">
+          <div class="timeline-item">
             <div class="timeline-marker" aria-hidden="true">
               <span class="marker-dot"></span>
             </div>
@@ -284,7 +287,7 @@
           </div>
 
           <!-- Role 2 -->
-          <div class="timeline-item reveal-bottom">
+          <div class="timeline-item">
             <div class="timeline-marker" aria-hidden="true">
               <span class="marker-dot"></span>
             </div>
@@ -318,7 +321,7 @@
           </div>
 
           <!-- Role 3 -->
-          <div class="timeline-item reveal-bottom">
+          <div class="timeline-item">
             <div class="timeline-marker" aria-hidden="true">
               <span class="marker-dot"></span>
             </div>
@@ -351,7 +354,7 @@
         </div>
 
         <!-- Education sub-section -->
-        <div class="edu-section reveal-bottom">
+        <div class="edu-section">
           <h3 class="edu-heading">Education</h3>
           <div class="edu-grid">
             <div class="edu-card">
@@ -392,9 +395,9 @@
         <div class="section-label mono">03 / Skills</div>
         <h2 class="section-title">Technical <span class="accent">Competencies</span></h2>
 
-        <div class="skills-grid">
+        <div class="skills-primary">
 
-          <div class="skill-group reveal-bottom">
+          <div class="skill-group skill-group--primary">
             <div class="skill-group-header">
               <i class="bx bx-shield-quarter"></i>
               <h3>Security Operations</h3>
@@ -411,7 +414,7 @@
             </div>
           </div>
 
-          <div class="skill-group reveal-bottom">
+          <div class="skill-group skill-group--primary">
             <div class="skill-group-header">
               <i class="bx bx-bug"></i>
               <h3>Offensive Security</h3>
@@ -427,7 +430,13 @@
             </div>
           </div>
 
-          <div class="skill-group reveal-bottom">
+        </div>
+
+        <div class="skills-secondary-label">Also proficient in</div>
+
+        <div class="skills-secondary">
+
+          <div class="skill-group">
             <div class="skill-group-header">
               <i class="bx bx-network-chart"></i>
               <h3>Networking</h3>
@@ -444,7 +453,7 @@
             </div>
           </div>
 
-          <div class="skill-group reveal-bottom">
+          <div class="skill-group">
             <div class="skill-group-header">
               <i class="bx bx-code-alt"></i>
               <h3>Development</h3>
@@ -461,7 +470,7 @@
             </div>
           </div>
 
-          <div class="skill-group reveal-bottom">
+          <div class="skill-group">
             <div class="skill-group-header">
               <i class="bx bx-cloud"></i>
               <h3>Cloud &amp; AI</h3>
@@ -476,7 +485,7 @@
             </div>
           </div>
 
-          <div class="skill-group reveal-bottom">
+          <div class="skill-group">
             <div class="skill-group-header">
               <i class="bx bx-desktop"></i>
               <h3>Platforms &amp; Tools</h3>
@@ -515,9 +524,9 @@
           <button class="cert-filter" data-filter="pro" role="tab" aria-selected="false">Professional</button>
         </div>
 
-        <div class="cert-grid" id="cert-grid">
+        <div class="cert-tier-label"><i class="bx bx-star"></i> Featured — 8 credentials most relevant to SOC &amp; security roles</div>
+        <div class="cert-featured-grid" id="cert-grid">
 
-          <!-- Cybersecurity certs -->
           <div class="cert-card" data-category="cybersec" data-cert-file="Fortinet Associate.jpg">
             <div class="cert-top">
               <span class="cert-issuer-chip fortinet-chip">Fortinet</span>
@@ -527,58 +536,6 @@
             <div class="cert-bottom">
               <span class="cert-org">Fortinet</span>
               <span class="cert-date">Jun 2026</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="cybersec" data-cert-file="CertificateOfCompletion_Ethical Hacking Evading IDS Firewalls and Honeypots_Linkedin.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip linkedin-chip">LinkedIn Learning</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Ethical Hacking: Evading IDS, Firewalls &amp; Honeypots</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">LinkedIn Learning</span>
-              <span class="cert-date">Apr 2026</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="cybersec" data-cert-file="CertificateOfCompletion_Kali Linux Essential Training.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip linkedin-chip">LinkedIn Learning</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Kali Linux Essential Training</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">LinkedIn Learning</span>
-              <span class="cert-date">Apr 2026</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="cybersec" data-cert-file="CertificateOfCompletion_Wireshark Malware and Forensics.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip linkedin-chip">LinkedIn Learning</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Wireshark: Malware and Forensics</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">LinkedIn Learning</span>
-              <span class="cert-date">Apr 2026</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="cybersec" data-cert-file="CertificateOfCompletion_The Cybersecurity Threat Landscape.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip linkedin-chip">LinkedIn Learning</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">The Cybersecurity Threat Landscape</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">LinkedIn Learning</span>
-              <span class="cert-date">Apr 2026</span>
             </div>
             <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
           </div>
@@ -596,59 +553,19 @@
             <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
           </div>
 
-          <div class="cert-card" data-category="cybersec" data-cert-file="CEH.jpg">
+          <div class="cert-card" data-category="cybersec" data-cert-file="CertificateOfCompletion_Wireshark Malware and Forensics.pdf">
             <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
+              <span class="cert-issuer-chip linkedin-chip">LinkedIn Learning</span>
               <span class="cert-status-dot active-cert" title="Active"></span>
             </div>
-            <h4 class="cert-name">Cisco Ethical Hacker</h4>
+            <h4 class="cert-name">Wireshark: Malware and Forensics</h4>
             <div class="cert-bottom">
-              <span class="cert-org">Cisco Networking Academy</span>
-              <span class="cert-date">Oct 2025</span>
+              <span class="cert-org">LinkedIn Learning</span>
+              <span class="cert-date">Apr 2026</span>
             </div>
             <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
           </div>
 
-          <div class="cert-card" data-category="cybersec" data-cert-file="LiauLibetoe-Introduction to Cybe-Certificate.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Introduction to Cybersecurity</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco</span>
-              <span class="cert-date">Aug 2025</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="cybersec" data-cert-file="LiauLibetoe-Cybersecurity Essent-Certificate.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot" title="Completed"></span>
-            </div>
-            <h4 class="cert-name">Cyber Security Essentials</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco Networking Academy</span>
-              <span class="cert-date">Jan 2019</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="cybersec" data-cert-file="ComptiaSec.png">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot" title="Completed"></span>
-            </div>
-            <h4 class="cert-name">Introduction to Cyber Security</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco Networking Academy</span>
-              <span class="cert-date">Jan 2019</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <!-- SOC / SIEM -->
           <div class="cert-card" data-category="soc" data-cert-file="CertificateOfCompletion_A Standalone Project Advanced Intrusion Detection for SOC Analysts by Infosec.pdf">
             <div class="cert-top">
               <span class="cert-issuer-chip infosec-chip">Infosec</span>
@@ -675,19 +592,6 @@
             <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
           </div>
 
-          <div class="cert-card" data-category="soc" data-cert-file="CertificateOfCompletion_Cisco Network Security Core Security Concepts.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip linkedin-chip">LinkedIn Learning</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Cisco Network Security: Core Security Concepts</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">LinkedIn Learning</span>
-              <span class="cert-date">Apr 2026</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
           <div class="cert-card" data-category="soc" data-cert-file="LiauLibetoe-Sec_Sep-Mar_2019-Certificate.pdf">
             <div class="cert-top">
               <span class="cert-issuer-chip cisco-chip">Cisco</span>
@@ -701,7 +605,6 @@
             <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
           </div>
 
-          <!-- Windows / AD -->
           <div class="cert-card" data-category="windows" data-cert-file="CertificateOfCompletion_Windows Server 2016 Install and Configure Active Directory.pdf">
             <div class="cert-top">
               <span class="cert-issuer-chip linkedin-chip">LinkedIn Learning</span>
@@ -715,112 +618,6 @@
             <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
           </div>
 
-          <div class="cert-card" data-category="windows" data-cert-file="CertificateOfCompletion_Windows Server 2016 Manage Monitor and Maintain Servers.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip linkedin-chip">LinkedIn Learning</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Windows Server 2016: Manage, Monitor, and Maintain Servers</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">LinkedIn Learning</span>
-              <span class="cert-date">Mar 2026</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="windows" data-cert-file="CertificateOfCompletion_Windows Server 2019 Remote Access Solutions.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip linkedin-chip">LinkedIn Learning</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Windows Server 2019: Remote Access Solutions</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">LinkedIn Learning</span>
-              <span class="cert-date">Mar 2026</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <!-- Networking -->
-          <div class="cert-card" data-category="network" data-cert-file="LiauLibetoe-NDG Linux Unhatc-certificate.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip other-chip">NDG</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">NDG Linux Essentials</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Network Development Group</span>
-              <span class="cert-date">Apr 2024</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="network" data-cert-file="LiauLibetoe-Mobility Fundamental-Wireless Technology.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot" title="Completed"></span>
-            </div>
-            <h4 class="cert-name">Mobility Fundamentals: Wireless Technology &amp; Standards</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco</span>
-              <span class="cert-date">Nov 2018</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="network" data-cert-file="LiauLibetoe-Mobility Fundamental-Wireless Router and Clients.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot" title="Completed"></span>
-            </div>
-            <h4 class="cert-name">Mobility Fundamentals: Wireless Router and Clients Configuration</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco</span>
-              <span class="cert-date">Nov 2018</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="network" data-cert-file="LiauLibetoe-Mobility Fundamental-Wireless LANs.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot" title="Completed"></span>
-            </div>
-            <h4 class="cert-name">Mobility Fundamentals: Wireless LANs</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco</span>
-              <span class="cert-date">Nov 2019</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="network" data-cert-file="LiauLibetoe-Mobility Fundamental-Troubleshoting WLANs.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot" title="Completed"></span>
-            </div>
-            <h4 class="cert-name">Mobility Fundamentals: Troubleshooting Wireless LANs</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco</span>
-              <span class="cert-date">Nov 2018</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <div class="cert-card" data-category="network" data-cert-file="LiauLibetoe-Mobility Fundamental-Bring Your Own Devices.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot" title="Completed"></span>
-            </div>
-            <h4 class="cert-name">Mobility Fundamentals: BYOD</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco</span>
-              <span class="cert-date">Nov 2018</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
-
-          <!-- AI / Cloud -->
           <div class="cert-card" data-category="ai" data-cert-file="Intro to GenAI.pdf">
             <div class="cert-top">
               <span class="cert-issuer-chip google-chip">Google</span>
@@ -834,112 +631,146 @@
             <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
           </div>
 
-          <div class="cert-card" data-category="ai" data-cert-file="GenAI Funda.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip google-chip">Google</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Generative AI Fundamentals with Google Cloud</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Udacity / Google Cloud</span>
-              <span class="cert-date">Aug 2025</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
+        </div><!-- /cert-featured-grid -->
 
-          <div class="cert-card" data-category="ai" data-cert-file="aws-educate-machine-learning-foundations-training-b.png">
-            <div class="cert-top">
-              <span class="cert-issuer-chip aws-chip">AWS</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">AWS Educate Machine Learning Foundations</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Amazon Web Services</span>
-              <span class="cert-date">Jul 2025</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
+        <button class="cert-archive-toggle" id="cert-archive-toggle" aria-expanded="false" aria-controls="cert-archive">
+          <span class="toggle-label">Show all 32 certifications</span>
+          <i class="bx bx-chevron-down"></i>
+        </button>
 
-          <div class="cert-card" data-category="ai" data-cert-file="IBMDesign20260624-32-2matdp.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip ibm-chip">IBM</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Artificial Intelligence Fundamentals</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">IBM</span>
-              <span class="cert-date">Aug 2025</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
+        <div class="cert-archive" id="cert-archive">
+          <div class="cert-archive-inner">
+            <div class="cert-archive-list">
 
-          <div class="cert-card" data-category="ai" data-cert-file="IntrotoModernAIUpdate20260624-32-cvrp4h.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Introduction to Modern AI</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco</span>
-              <span class="cert-date">Aug 2025</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
+              <a class="cert-archive-row" data-category="cybersec" href="certificates_licenses/CertificateOfCompletion_Ethical%20Hacking%20Evading%20IDS%20Firewalls%20and%20Honeypots_Linkedin.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Ethical Hacking: Evading IDS, Firewalls &amp; Honeypots</span>
+                <span class="cert-archive-org">LinkedIn Learning</span>
+                <span class="cert-archive-date">Apr 2026</span>
+              </a>
+              <a class="cert-archive-row" data-category="cybersec" href="certificates_licenses/CertificateOfCompletion_Kali%20Linux%20Essential%20Training.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Kali Linux Essential Training</span>
+                <span class="cert-archive-org">LinkedIn Learning</span>
+                <span class="cert-archive-date">Apr 2026</span>
+              </a>
+              <a class="cert-archive-row" data-category="cybersec" href="certificates_licenses/CertificateOfCompletion_The%20Cybersecurity%20Threat%20Landscape.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">The Cybersecurity Threat Landscape</span>
+                <span class="cert-archive-org">LinkedIn Learning</span>
+                <span class="cert-archive-date">Apr 2026</span>
+              </a>
+              <a class="cert-archive-row" data-category="cybersec" href="certificates_licenses/CEH.jpg" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Cisco Ethical Hacker</span>
+                <span class="cert-archive-org">Cisco Networking Academy</span>
+                <span class="cert-archive-date">Oct 2025</span>
+              </a>
+              <a class="cert-archive-row" data-category="cybersec" href="certificates_licenses/LiauLibetoe-Introduction%20to%20Cybe-Certificate.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Introduction to Cybersecurity</span>
+                <span class="cert-archive-org">Cisco</span>
+                <span class="cert-archive-date">Aug 2025</span>
+              </a>
+              <a class="cert-archive-row" data-category="cybersec" href="certificates_licenses/LiauLibetoe-Cybersecurity%20Essent-Certificate.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Cyber Security Essentials</span>
+                <span class="cert-archive-org">Cisco Networking Academy</span>
+                <span class="cert-archive-date">Jan 2019</span>
+              </a>
+              <a class="cert-archive-row" data-category="cybersec" href="certificates_licenses/ComptiaSec.png" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Introduction to Cyber Security</span>
+                <span class="cert-archive-org">Cisco Networking Academy</span>
+                <span class="cert-archive-date">Jan 2019</span>
+              </a>
 
-          <div class="cert-card" data-category="ai" data-cert-file="IntrotoDataScienceUpdate20260624-31-9t3vob.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip cisco-chip">Cisco</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Introduction to Data Science</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">Cisco Networking Academy</span>
-              <span class="cert-date">Dec 2025</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
+              <a class="cert-archive-row" data-category="soc" href="certificates_licenses/CertificateOfCompletion_Cisco%20Network%20Security%20Core%20Security%20Concepts.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Cisco Network Security: Core Security Concepts</span>
+                <span class="cert-archive-org">LinkedIn Learning</span>
+                <span class="cert-archive-date">Apr 2026</span>
+              </a>
 
-          <div class="cert-card" data-category="ai" data-cert-file="Liau_Libetoe_Dirisa.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip other-chip">CSIR</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Datathon Training Participation</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">CSIR</span>
-              <span class="cert-date">Jun 2025</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
+              <a class="cert-archive-row" data-category="windows" href="certificates_licenses/CertificateOfCompletion_Windows%20Server%202016%20Manage%20Monitor%20and%20Maintain%20Servers.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Windows Server 2016: Manage, Monitor, and Maintain Servers</span>
+                <span class="cert-archive-org">LinkedIn Learning</span>
+                <span class="cert-archive-date">Mar 2026</span>
+              </a>
+              <a class="cert-archive-row" data-category="windows" href="certificates_licenses/CertificateOfCompletion_Windows%20Server%202019%20Remote%20Access%20Solutions.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Windows Server 2019: Remote Access Solutions</span>
+                <span class="cert-archive-org">LinkedIn Learning</span>
+                <span class="cert-archive-date">Mar 2026</span>
+              </a>
 
-          <!-- Professional -->
-          <div class="cert-card" data-category="pro" data-cert-file="Libetoe YALI Cert Design Driven ENtr.pdf">
-            <div class="cert-top">
-              <span class="cert-issuer-chip other-chip">YALI</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">Certificate in Design Driven Entrepreneurship</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">YALI Network</span>
-              <span class="cert-date">Sep 2024</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
+              <a class="cert-archive-row" data-category="network" href="certificates_licenses/LiauLibetoe-NDG%20Linux%20Unhatc-certificate.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">NDG Linux Essentials</span>
+                <span class="cert-archive-org">Network Development Group</span>
+                <span class="cert-archive-date">Apr 2024</span>
+              </a>
+              <a class="cert-archive-row" data-category="network" href="certificates_licenses/LiauLibetoe-Mobility%20Fundamental-Wireless%20Technology.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Mobility Fundamentals: Wireless Technology &amp; Standards</span>
+                <span class="cert-archive-org">Cisco</span>
+                <span class="cert-archive-date">Nov 2018</span>
+              </a>
+              <a class="cert-archive-row" data-category="network" href="certificates_licenses/LiauLibetoe-Mobility%20Fundamental-Wireless%20Router%20and%20Clients.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Mobility Fundamentals: Wireless Router and Clients Configuration</span>
+                <span class="cert-archive-org">Cisco</span>
+                <span class="cert-archive-date">Nov 2018</span>
+              </a>
+              <a class="cert-archive-row" data-category="network" href="certificates_licenses/LiauLibetoe-Mobility%20Fundamental-Wireless%20LANs.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Mobility Fundamentals: Wireless LANs</span>
+                <span class="cert-archive-org">Cisco</span>
+                <span class="cert-archive-date">Nov 2019</span>
+              </a>
+              <a class="cert-archive-row" data-category="network" href="certificates_licenses/LiauLibetoe-Mobility%20Fundamental-Troubleshoting%20WLANs.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Mobility Fundamentals: Troubleshooting Wireless LANs</span>
+                <span class="cert-archive-org">Cisco</span>
+                <span class="cert-archive-date">Nov 2018</span>
+              </a>
+              <a class="cert-archive-row" data-category="network" href="certificates_licenses/LiauLibetoe-Mobility%20Fundamental-Bring%20Your%20Own%20Devices.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Mobility Fundamentals: BYOD</span>
+                <span class="cert-archive-org">Cisco</span>
+                <span class="cert-archive-date">Nov 2018</span>
+              </a>
 
-          <div class="cert-card" data-category="pro" data-cert-file="Threadmodelling.jpg">
-            <div class="cert-top">
-              <span class="cert-issuer-chip other-chip">IriusRisk</span>
-              <span class="cert-status-dot active-cert" title="Active"></span>
-            </div>
-            <h4 class="cert-name">TMC Global Threat Modeling Hackathon Participant</h4>
-            <div class="cert-bottom">
-              <span class="cert-org">IriusRisk</span>
-              <span class="cert-date">Jan 2026</span>
-            </div>
-            <button class="cert-preview-btn" aria-label="Preview certificate"><i class="bx bx-show"></i> Preview</button>
-          </div>
+              <a class="cert-archive-row" data-category="ai" href="certificates_licenses/GenAI%20Funda.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Generative AI Fundamentals with Google Cloud</span>
+                <span class="cert-archive-org">Udacity / Google Cloud</span>
+                <span class="cert-archive-date">Aug 2025</span>
+              </a>
+              <a class="cert-archive-row" data-category="ai" href="certificates_licenses/aws-educate-machine-learning-foundations-training-b.png" target="_blank" rel="noopener">
+                <span class="cert-archive-name">AWS Educate Machine Learning Foundations</span>
+                <span class="cert-archive-org">Amazon Web Services</span>
+                <span class="cert-archive-date">Jul 2025</span>
+              </a>
+              <a class="cert-archive-row" data-category="ai" href="certificates_licenses/IBMDesign20260624-32-2matdp.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Artificial Intelligence Fundamentals</span>
+                <span class="cert-archive-org">IBM</span>
+                <span class="cert-archive-date">Aug 2025</span>
+              </a>
+              <a class="cert-archive-row" data-category="ai" href="certificates_licenses/IntrotoModernAIUpdate20260624-32-cvrp4h.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Introduction to Modern AI</span>
+                <span class="cert-archive-org">Cisco</span>
+                <span class="cert-archive-date">Aug 2025</span>
+              </a>
+              <a class="cert-archive-row" data-category="ai" href="certificates_licenses/IntrotoDataScienceUpdate20260624-31-9t3vob.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Introduction to Data Science</span>
+                <span class="cert-archive-org">Cisco Networking Academy</span>
+                <span class="cert-archive-date">Dec 2025</span>
+              </a>
+              <a class="cert-archive-row" data-category="ai" href="certificates_licenses/Liau_Libetoe_Dirisa.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Datathon Training Participation</span>
+                <span class="cert-archive-org">CSIR</span>
+                <span class="cert-archive-date">Jun 2025</span>
+              </a>
 
-        </div><!-- /cert-grid -->
+              <a class="cert-archive-row" data-category="pro" href="certificates_licenses/Libetoe%20YALI%20Cert%20Design%20Driven%20ENtr.pdf" target="_blank" rel="noopener">
+                <span class="cert-archive-name">Certificate in Design Driven Entrepreneurship</span>
+                <span class="cert-archive-org">YALI Network</span>
+                <span class="cert-archive-date">Sep 2024</span>
+              </a>
+              <a class="cert-archive-row" data-category="pro" href="certificates_licenses/Threadmodelling.jpg" target="_blank" rel="noopener">
+                <span class="cert-archive-name">TMC Global Threat Modeling Hackathon Participant</span>
+                <span class="cert-archive-org">IriusRisk</span>
+                <span class="cert-archive-date">Jan 2026</span>
+              </a>
+
+            </div>
+          </div>
+        </div>
 
         <div class="cert-footer-note">
           <i class="bx bx-folder-open"></i>
@@ -1139,7 +970,7 @@
         <h2 class="section-title">Awards &amp; <span class="accent">Competitions</span></h2>
 
         <!-- Featured achievement -->
-        <div class="achievement-featured reveal-bottom">
+        <div class="achievement-featured">
           <div class="ach-featured-badge">
             <i class="bx bx-trophy"></i> Continental Champion
           </div>
@@ -1189,7 +1020,7 @@
         <!-- Other achievements grid -->
         <div class="achievements-grid">
 
-          <div class="ach-card reveal-bottom">
+          <div class="ach-card">
             <div class="ach-icon">
               <i class="bx bx-shield-alt-2"></i>
             </div>
@@ -1201,7 +1032,7 @@
             </div>
           </div>
 
-          <div class="ach-card reveal-bottom">
+          <div class="ach-card">
             <div class="ach-icon">
               <i class="bx bx-bulb"></i>
             </div>
@@ -1213,7 +1044,7 @@
             </div>
           </div>
 
-          <div class="ach-card reveal-bottom">
+          <div class="ach-card">
             <div class="ach-icon">
               <i class="bx bx-globe"></i>
             </div>
@@ -1225,7 +1056,7 @@
             </div>
           </div>
 
-          <div class="ach-card reveal-bottom">
+          <div class="ach-card">
             <div class="ach-icon">
               <i class="bx bx-rocket"></i>
             </div>
@@ -1254,7 +1085,7 @@
         <div class="contact-grid">
 
           <!-- Contact info -->
-          <div class="contact-info reveal-left">
+          <div class="contact-info">
             <h3>Contact Information</h3>
             <ul class="contact-list">
               <li>
@@ -1309,7 +1140,7 @@
           </div>
 
           <!-- Contact form -->
-          <div class="contact-form-wrap reveal-right">
+          <div class="contact-form-wrap">
             <form id="contact-form" novalidate>
               <div class="form-row">
                 <div class="form-group">
@@ -1352,12 +1183,12 @@
       <div class="footer-top">
         <a href="#hero" class="footer-logo nav-logo" aria-label="Home">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex-shrink:0">
-            <rect width="24" height="24" rx="6" fill="var(--cyan)" fill-opacity="0.12"/>
-            <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" stroke="var(--cyan)" stroke-opacity="0.5"/>
-            <path d="M5 9l3.5 3L5 15" stroke="var(--cyan)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 15h7" stroke="var(--cyan)" stroke-width="1.6" stroke-linecap="round"/>
+            <rect width="24" height="24" rx="6" fill="var(--accent-500)" fill-opacity="0.12"/>
+            <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" stroke="var(--accent-500)" stroke-opacity="0.5"/>
+            <path d="M5 9l3.5 3L5 15" stroke="var(--accent-500)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15h7" stroke="var(--accent-500)" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
-          <span style="color:var(--cyan)">Li</span>beto<span style="color:var(--cyan)">e</span>
+          <span style="color:var(--accent-500)">Li</span>beto<span style="color:var(--accent-500)">e</span>
         </a>
         <p class="footer-tagline">SOC Analyst · Cybersecurity Engineer · Lesotho</p>
         <div class="footer-social">
@@ -1407,7 +1238,7 @@
        SCRIPTS
   ============================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="js/vendor/motion.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="js/script.js"></script>
 
